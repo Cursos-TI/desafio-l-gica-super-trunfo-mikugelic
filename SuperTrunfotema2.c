@@ -8,7 +8,7 @@ int main() {
     int turistico;
     float superpoder;
 
-    int escolha; //variavel escolha de atribuição
+    int escolha, escolha2; //variavel escolha de atribuição
 
     //variável jogador 2
     char estado2[50], codigo2[50], cidade2[50];
@@ -20,29 +20,33 @@ int main() {
     int opcao; //variável menu inicial
 
     //menu inicial
-    printf("--- Menu Inicial ---\n\n");
-    printf("1. Iniciar\n");
-    printf("2. Regras do jogo\n");
-    printf("Escolha uma opção: \n");
+    printf("\n🌸🌸 BEM-VINDO AO JOGO DOS ESTADOS MÁGICOS 🌸🌸\n");
+    printf("O que você gostaria de fazer agora?\n\n");
+    printf("1. Iniciar uma nova aventura\n");
+    printf("2. Ver as regras do jogo\n");
+    printf("💌 Escolha com o coração: ");
     scanf("%d", &opcao);
 
     switch (opcao) {
         case 1:
-        printf("Iniciando jogo...\n\n");
+        printf("\n🎮✨ Iniciando o jogo encantado... Que a magia comece! ✨🎮\n\n");
         break;
 
         case 2:
-        printf("--Regras do jogo--\n");
-        printf("1. Este é um jogo de batalha de cartas.\n");
-        printf("2. Você deverá cadastrar uma carta com informações de um estado desejado.\n");
-        printf("3. O jogador deverá escolher qual atributo usar para a batalha\n");
-        printf("4. Após a escolha, uma comparação vai ser feita entre a escolha do jogador 1 e jogador 2\n");
-        printf("5. Em todos o maior vence, exceto densidade populacional, no qual o menor vence\n\n");
+        printf("\n📜✨ REGRINHAS ENCANTADAS DO JOGO ✨📜\n\n");
+        printf("🃏 1. Este é um jogo de batalha de cartas mágicas dos estados brasileiros!\n");
+        printf("📝 2. Você vai cadastrar uma cartinha com informações de um estado querido.\n");
+        printf("🔍 3. Escolha um ou mais atributos encantados para batalhar!\n");
+        printf("⚖️ 4. A comparação será feita entre as cartinhas dos dois jogadores.\n");
+        printf("🏆 5. Quem tiver o atributo *mais forte* vence... 🥇\n");
+        printf("☁️ 6. *Exceto* no caso da densidade populacional — onde o **menor** valor ganha, pois paz e espaço valem muito! 🌿💗\n");
+        printf("\n🌈 Boa sorte, herói dos estados! 🌟\n\n");
         break;
 
 
         default: 
-        printf("Opção inválida, tente novamente.\n");
+         printf("\n❌ Ops! Opção inválida...\n");
+        printf("🔁 Tente novamente e escolha um número fofinho! 💖\n\n");
         break;
 
     } 
@@ -50,27 +54,29 @@ int main() {
 
 
     // Cadastro carta 01
-    printf("\n--Cadastro da carta 01:--\n\n");
+    printf("\n🌈 Vamos criar sua cartinha mágica! 🌈\n");
 
-    printf("Digite o estado: \n");
+    printf("\n-- Carta 01: --\n\n");
+
+    printf("📍 Nome do estado encantado: ");
     scanf("%s", estado);
 
-    printf("Digite o código da carta: \n");
+    printf("🔖 Código da carta (seja criativo!): ");
     scanf("%s", codigo);
 
-    printf("Digite a cidade: \n");
+    printf("🌆 Nome da cidade principal: ");
     scanf("%s", cidade);
 
-    printf("Digite o número de habitantes: \n");
+    printf("👨‍👩‍👧 Quantas pessoinhas vivem lá? ");
     scanf("%lu", &populacao);
 
-    printf("Digite a área em km²: \n");
+    printf("📏 Qual a área em km² desse lugar mágico? ");;
     scanf("%f", &area);
 
-    printf("Digite o PIB: \n");
+    printf("💰 PIB (o tesouro do estado): ");;
     scanf("%f", &pib);
 
-    printf("Digite o número de pontos turísticos: \n");
+    printf("🌄 Quantos pontos turísticos encantam os visitantes? ");
     scanf("%d", &turistico);
 
     densidade = populacao / area;
@@ -80,25 +86,25 @@ int main() {
     // Cadastro carta 02
     printf("\n--Cadastro da carta 02:--\n\n");
 
-    printf("Digite o estado: \n");
+    printf("📍 Nome do estado encantado: ");
     scanf("%s", estado2);
 
-    printf("Digite o código da carta: \n");
+    printf("🔖 Código da carta (seja criativo!): ");
     scanf("%s", codigo2);
 
-    printf("Digite a cidade: \n");
+    printf("🌆 Nome da cidade principal: ");
     scanf("%s", cidade2);
 
-    printf("Digite o número de habitantes: \n");
+    printf("👨‍👩‍👧 Quantas pessoinhas vivem lá? ");
     scanf("%lu", &populacao2);
 
-    printf("Digite a área em km²: \n");
+    printf("📏 Qual a área em km² desse lugar mágico? ");
     scanf("%f", &area2);
 
-    printf("Digite o PIB: \n");
+    printf("💰 PIB (o tesouro do estado): ");
     scanf("%f", &pib2);
 
-    printf("Digite o número de pontos turísticos: \n");
+    printf("🌄 Quantos pontos turísticos encantam os visitantes? ");
     scanf("%d", &turistico2);
 
     densidade2 = populacao2 / area2;
@@ -106,89 +112,210 @@ int main() {
     superpoder2 = populacao2 + area2 + (pib2 * 1000000000.0) + percapita2 + turistico2 + (1.0 / densidade2);
 
     // Resultado carta 01
-    printf("\nResultado carta 01:\n\n");
-    printf("Estado carta 01: %s\n", estado);
-    printf("Código carta 01: %s\n", codigo);
-    printf("Cidade carta 01: %s\n", cidade);
-    printf("Habitantes carta 01: %d\n", populacao);
-    printf("Área carta 01: %.1f km²\n", area);
-    printf("PIB carta 01: %.2f\n", pib);
-    printf("Pontos turísticos carta 01: %d\n", turistico);
-    printf("A Densidade Populacional da carta 01 é: %.2f hab/km²\n", densidade);
-    printf("O PIB per Capita da carta 01 é: %.2f reais\n\n", percapita);
+    printf("\n🌟✨ Resultado da Cartinha 01 ✨🌟\n\n");
+    printf("📍 Estado:            %s\n", estado);
+    printf("🆔 Código da Carta:   %s\n", codigo);
+    printf("🏙️  Cidade:           %s\n", cidade);
+    printf("👥 Habitantes:        %lu\n", populacao);
+    printf("🌎 Área:              %.1f km²\n", area);
+    printf("💰 PIB:               %.2f bilhões\n", pib);
+    printf("🏖️  Pontos Turísticos: %d\n", turistico);
+    printf("📏 Densidade Populacional: %.2f hab/km²\n", densidade);
+    printf("💸 PIB per Capita:    %.2f reais\n", percapita);
+    printf("🎇-----------------------------🎇\n");
 
     // Resultado carta 02
-    printf("\nResultado carta 02:\n\n");
-    printf("Estado carta 02: %s\n", estado2);
-    printf("Código carta 02: %s\n", codigo2);
-    printf("Cidade carta 02: %s\n", cidade2);
-    printf("Habitantes carta 02: %d\n", populacao2);
-    printf("Área carta 02: %.1f km²\n", area2);
-    printf("PIB carta 02: %.2f\n", pib2);
-    printf("Pontos turísticos carta 02: %d\n", turistico2);
-    printf("A Densidade Populacional da carta 02 é: %.2f hab/km²\n", densidade2);
-    printf("O PIB per Capita da carta 02 é: %.2f reais\n\n", percapita2);
+    printf("\n🌟✨ Resultado da Cartinha 02 ✨🌟\n\n");
+    printf("📍 Estado:            %s\n", estado2);
+    printf("🆔 Código da Carta:   %s\n", codigo2);
+    printf("🏙️  Cidade:           %s\n", cidade2);
+    printf("👥 Habitantes:        %lu\n", populacao2);
+    printf("🌎 Área:              %.1f km²\n", area2);
+    printf("💰 PIB:               %.2f bilhões\n", pib2);
+    printf("🏖️  Pontos Turísticos: %d\n", turistico2);
+    printf("📏 Densidade Populacional: %.2f hab/km²\n", densidade2);
+    printf("💸 PIB per Capita:    %.2f reais\n", percapita2);
+    printf("🎇-----------------------------🎇\n");
 
     //batalha
-    printf("\n--- BATALHA ---\n\n");
+    printf("\n⚔️✨ Hora da batalha dos atributos mágicos! ✨⚔️\n");
 
     //menu escolha atribuição batalha
-    printf("--- Escolha a atribuição desejada para a batalha: ---\n\n");
-    printf("1. População\n");
-    printf("2. Área.\n");
-    printf("3. PIB\n");
-    printf("4. Pontos turísticos\n");
-    printf("5. PIB per capita\n");
-    printf("6. Densidade Populacional\n");
-    printf("7. Super Poder\n");
-    scanf("%d", &escolha); 
+    printf("Escolha com sabedoria o primeiro atributo para lutar: \n\n", escolha);
+    printf("1. População🧍\n");
+    printf("2. Área 🌐\n");
+    printf("3. PIB 💵\n");
+    printf("4. Pontos Turísticos 🌅\n");
+    printf("5. PIB per capita 🧮\n");
+    printf("6. Densidade Populacional 👥/📏 (MENOR vence!)\n");
+    printf("7. Superpoder Supremo 🌟\n");
+    printf("Digite o número do atributo desejado: ");
+    scanf("%d", &escolha);  
 
-    switch (escolha) {
-        case 1:
-        printf("Batalha atribuição população\n");
-        break;
+    if (escolha < 1 || escolha > 7) {
+        printf("Atributo inválido! Por favor, escolha um número de 1 a 7.\n");
+    }  while (escolha < 1 || escolha > 7);
 
-        case 2:
-        printf("Batalha atribuição área\n");
-        break;
+    printf("Escolha com sabedoria o segundo atributo para lutar (diferente do primeiro [$d]): \n", escolha2);
+    if (escolha != 1) printf("1. População🧍\n");
+    if (escolha != 2) printf("2. Área 🌐\n");
+    if (escolha != 3) printf("3. PIB 💵\n");
+    if (escolha != 4) printf("4. Pontos Turísticos 🌅\n");
+    if (escolha != 5) printf("5. PIB per capita 🧮\n");
+    if (escolha != 6) printf("6. Densidade Populacional 👥/📏 (MENOR vence!)\n");
+    if (escolha != 7) printf("7. Superpoder Supremo 🌟\n");
+    printf("Digite o número desejado: ");
+    scanf("%d", &escolha2);
+    if (escolha == escolha2) {
+        printf("Você já escolheu esse atributo! Escolha um diferente.\n");
+    } while (escolha2 == escolha || escolha2 < 1 || escolha2 > 7);
 
-        case 3:
-        printf("Batalha atribuição PIB\n");
-        break;
+        //declarção dos valores dos atributos
 
-        case 4:
-        printf("Batalha atribuição pontos turísticos\n");
-        break;
+        float valor1_c1 = 0, valor2_c1 = 0, valor1_c2 = 0, valor2_c2 = 0;
 
-        case 5:
-        printf("Batalha atribuição PIB per capita\n");
-        break;
+        //obter valores do primeiro atributo
+        switch (escolha) {
+            case 1:
+            valor1_c1 = populacao;
+            valor1_c2 = populacao2;
+            break;
 
-        case 6:
-        printf("Batalha atribuição densidade populacional\n");
-        break;
+            case 2:
+            valor1_c1 = area;
+            valor1_c2 = area2;
+            break;
 
-        case 7:
-        printf("Batalha atribuição Super Poder\n");
-        break;
+            case 3:
+            valor1_c1 = pib;
+            valor1_c2 = pib2;
+            break;
 
-        default:
-        printf("Opção inválida, tente novamente\n");
-        break;
-    }
-     
-        if ((populacao == populacao2) || (area == area2) || (pib == pib2) || 
-           (turistico == turistico2) || (percapita == percapita2) || (superpoder2 == superpoder) || 
-           (densidade == densidade2)){
-            printf("-- O jogo empatou! --\n");
-        } else if ((populacao > populacao2) ||
-                   (area > area2) || (pib > pib2) || (turistico > turistico2) || (percapita > percapita2) ||
-                   (superpoder > superpoder2) || (densidade < densidade2))
-          {  printf("--Jogador 1 ganhou!--"); 
-           } else { 
-            printf("--Jogador 2 ganhou!--");
+            case 4:
+            valor1_c1 = turistico;
+            valor1_c2 = turistico2;
+            break;
+
+            case 5:
+            valor1_c1 = percapita;
+            valor1_c2 = percapita2;
+            break;
+
+            case 6:
+            valor1_c1 = densidade;
+            valor1_c2= densidade2;
+            break;
+
+            case 7: 
+            valor1_c1 = superpoder;
+            valor1_c2 = superpoder2;
+            break;
         }
+        
+    // Obter valores do segundo atributo
+        switch (escolha2) {
+            case 1:
+            valor2_c1 = populacao;
+            valor2_c2 = populacao2;
+            break;
 
+            case 2:
+            valor2_c1 = area;
+            valor2_c2 = area2;
+            break;
+
+            case 3:
+            valor2_c1 = pib;
+            valor2_c2 = pib2;
+            break;
+
+            case 4:
+            valor2_c1 = turistico;
+            valor2_c2 = turistico2;
+            break;
+
+            case 5:
+            valor2_c1 = percapita;
+            valor2_c2 = percapita2;
+            break;
+
+            case 6:
+            valor2_c1 = densidade;
+            valor2_c2 = densidade2;
+            break;
+
+            case 7:
+            valor2_c1 = superpoder;
+            valor2_c2 = superpoder2;
+            break;
+    }
+
+    //comparação individual com regra da densidade
+    int vitorias_c1 = 0, vitorias_c2 = 0;
+
+    printf("\n-- Resultado da Batalha --\n\n");
+
+    //comparação do primeiro atributo
+    printf("Comparando atributo %d...\n", escolha);
+    if (escolha == 6) //menor vence
+        if (valor1_c1 < valor1_c2) {
+            printf("💖 Carta 1 vence (menor densidade = mais paz!)\n");
+            vitorias_c1++;
+        } else if (valor1_c2 < valor1_c1) {
+            printf("💖 Carta 2 vence (menor densidade = mais sossego!)\n");
+            vitorias_c2++;
+        } else {
+            printf("🤝 Empate fofo! Ambas são igualmente encantadoras!\n");
+        } else {
+            if (valor1_c1 > valor1_c2) {
+                printf("🎉 Carta 1 arrasou no atributo escolhido!\n");
+                vitorias_c1++;
+            } else if (valor1_c2 > valor1_c1) {
+                printf("🎉 Carta 2 brilhou mais nesse poder!\n");
+                vitorias_c2++;
+            }  
+        }
+        //comparação segundo atributo
+        printf("Comparando atributo %d...\n", escolha2);
+    if (escolha2 == 6) //menor vence
+        if (valor2_c1 < valor2_c2) {
+            printf("💖 Carta 1 vence (menor densidade = mais paz!)\n");
+            vitorias_c1++;
+        } else if (valor2_c2 < valor2_c1) {
+            printf("💖 Carta 2 vence (menor densidade = mais sossego!)\n");
+            vitorias_c2++;
+        } else {
+            printf("🌈 Empate mágico!\n");
+        } else {
+            if (valor2_c1 > valor2_c2) {
+                printf("🎉 Carta 1 arrasou no atributo escolhido!\n");
+                vitorias_c1++;
+            } else if (valor2_c2 > valor2_c1) {
+                printf("🎉 Carta 2 brilhou mais nesse poder!\n");
+                vitorias_c2++;
+            } else {
+                printf("🌈 Empate mágico!\n");
+            }
+        }     
+        
+        // soma dos valores
+        float soma_c1 = valor1_c1 + valor2_c1;
+        float soma_c2 = valor1_c2 + valor2_c2;
+
+        printf("📊 Somando os atributos escolhidos...\n");
+        printf("🃏 Carta 1: %.2f pontos mágicos\n", soma_c1);
+        printf("🃏 Carta 2: %.2f pontos mágicos\n", soma_c2);
+
+        //resultado final com base na soma 
+        printf("\n💫✨ Resultado Final ✨💫\n");
+        if (soma_c1 > soma_c2) {
+            printf("🏆 A Carta 1 é a campeã encantada! Parabéns! 🎊\n");
+        } else if (soma_c2 > soma_c1) {
+            printf("🏆 A Carta 2 brilha com força e venceu! 💖\n");
+
+        } else {
+            printf("🌟 Empate mágico! Ambas são incríveis! 🌟\n");
+        }
     
 
     
