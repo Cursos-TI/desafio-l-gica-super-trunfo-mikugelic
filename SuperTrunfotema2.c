@@ -20,6 +20,7 @@ int main() {
     int opcao; //variável menu inicial
 
     //menu inicial
+    do {
     printf("\n🌸🌸 BEM-VINDO AO JOGO DOS ESTADOS MÁGICOS 🌸🌸\n");
     printf("O que você gostaria de fazer agora?\n\n");
     printf("1. Iniciar uma nova aventura\n");
@@ -33,6 +34,7 @@ int main() {
         break;
 
         case 2:
+        
         printf("\n📜✨ REGRINHAS ENCANTADAS DO JOGO ✨📜\n\n");
         printf("🃏 1. Este é um jogo de batalha de cartas mágicas dos estados brasileiros!\n");
         printf("📝 2. Você vai cadastrar uma cartinha com informações de um estado querido.\n");
@@ -42,14 +44,17 @@ int main() {
         printf("☁️ 6. *Exceto* no caso da densidade populacional — onde o **menor** valor ganha, pois paz e espaço valem muito! 🌿💗\n");
         printf("\n🌈 Boa sorte, herói dos estados! 🌟\n\n");
         break;
-
+        
 
         default: 
          printf("\n❌ Ops! Opção inválida...\n");
         printf("🔁 Tente novamente e escolha um número fofinho! 💖\n\n");
         break;
+    }
 
-    } 
+    } while (opcao != 1);
+
+    
 
 
 
@@ -141,6 +146,7 @@ int main() {
     printf("\n⚔️✨ Hora da batalha dos atributos mágicos! ✨⚔️\n");
 
     //menu escolha atribuição batalha
+    do {
     printf("Escolha com sabedoria o primeiro atributo para lutar: \n\n", escolha);
     printf("1. População🧍\n");
     printf("2. Área 🌐\n");
@@ -154,9 +160,11 @@ int main() {
 
     if (escolha < 1 || escolha > 7) {
         printf("Atributo inválido! Por favor, escolha um número de 1 a 7.\n");
-    }  while (escolha < 1 || escolha > 7);
+    }
+  } while (escolha < 1 || escolha > 7);
 
-    printf("Escolha com sabedoria o segundo atributo para lutar (diferente do primeiro [$d]): \n", escolha2);
+    do {
+    printf("Escolha com sabedoria o segundo atributo para lutar (diferente do primeiro [%d]): \n", escolha2);
     if (escolha != 1) printf("1. População🧍\n");
     if (escolha != 2) printf("2. Área 🌐\n");
     if (escolha != 3) printf("3. PIB 💵\n");
@@ -168,6 +176,7 @@ int main() {
     scanf("%d", &escolha2);
     if (escolha == escolha2) {
         printf("Você já escolheu esse atributo! Escolha um diferente.\n");
+    }
     } while (escolha2 == escolha || escolha2 < 1 || escolha2 > 7);
 
         //declarção dos valores dos atributos
